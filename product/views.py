@@ -7,7 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class LatestProductList(APIView):
     def get(self, request, format=None):
-        products = StoreProductsModel.objects.all()[0:6]
+        products = StoreProductsModel.objects.all()[0:4]
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
 
